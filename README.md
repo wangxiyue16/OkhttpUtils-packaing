@@ -44,7 +44,7 @@ public interface INetwork extends NetworkListener {
 
 ## 第二步在你项目最底层的Fragment和Activity中实现`INetwork`这个你定义的接口,并完善网络请求的代码,
     定义一个`lib.network`包下的`NetworkExecutor`的成员变量,
-	```java
+```java
 	private NetworkExecutor mNetworkExecutor;
 ```
 
@@ -80,7 +80,7 @@ public interface INetwork extends NetworkListener {
 	
 ```
 	不要忘记在`onDestroy`方法中添加取消任务
-		```java
+```java
     @Override
     protected void onDestroy() {
         super.onDestroy();
@@ -95,32 +95,32 @@ public interface INetwork extends NetworkListener {
 
 ## 第三步就简单了,当你创建的Activity或者是Fragment继承你写的基类时,
 	网络请求就调用这个方法就可以了,
-			```java
+```java
 	exeNetworkRequest(int what, NetworkRequest request);
 ```
 	第一个参数what是你你开启的请求的序列,请求成功或者失败或者是取消请求都用到该值,
 	第二个参数是请求的任务实例,NetworkRequest可以通过`lib.network.bean.NetworkRequest`类里面的
-				```java
+```java
 		NetworkRequest task = newPost(String url);
 ```
 等方法得到,也可以通过`lib.network.bean.NetworkRequest`类里面的
-				```java
+```java
 		task.addParam(String name, String value);
 ```
 等方法添加请求的参数
 
 ## 其它几个方法的解释:
-			```java
+```java
 	    Object onNetworkResponse(int id, NetworkResponse nr);
 ```
 可以通过`nr.getText()`得到请求到的网络数据(Sring字符串类型),这个方法是让你把得到的String类型数据解析成json数据并封装到bean类的
 
-			```java
+```java
 	     void onNetworkSuccess(int id, Object result);
 ```
 这个方法是让你对成功拿到网络数据并解析成功后的操作的,`result`解析后的数据
 
-			```java
+```java
 	     void onNetworkError(int id, NetError error);
 ```
 这个方法是网络请求数据错误或者其它错误时操作的方法,例如取消Loading等,可以从`error`中拿到错误内容
