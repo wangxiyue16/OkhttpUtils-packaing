@@ -62,9 +62,9 @@ public class NetworkRequest {
         return mRetry;
     }
 
-/**
- * String dir 文件目录
- */
+    /**
+    * String dir 文件目录(文件所在路径)
+    */
     private void setDestDir(String dir) {
         mDestDir = dir;
     }
@@ -73,9 +73,9 @@ public class NetworkRequest {
         return mDestDir;
     }
 
-/**
- * String name 文件名
- */
+    /**
+    * String name 文件名
+    */
     public void setFileName(String name) {
         mDestFileName = name;
     }
