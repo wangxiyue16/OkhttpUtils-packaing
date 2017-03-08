@@ -1,18 +1,18 @@
 # OkhttpUtils-packaing
-¶ÔokhttputilsµÄ·â×°Àà£¬okhttputils¼û£º[https://github.com/hongyangAndroid/okhttputils.
+å¯¹okhttputilsçš„å°è£…ç±»ï¼Œokhttputilsè§ï¼š[https://github.com/hongyangAndroid/okhttputils.
 
 
-## ÓÃ·¨
+## ç”¨æ³•
 
 * Android Studio
 	
 	```
 	compile 'com.zhy:okhttputils:2.6.2'
 	```
-	µ±Ç°Ê¹ÓÃµÄÊÇÕâ¸ö°æ±¾,ÆäËü°æ±¾Î´²âÊÔ
+	å½“å‰ä½¿ç”¨çš„æ˜¯è¿™ä¸ªç‰ˆæœ¬,å…¶å®ƒç‰ˆæœ¬æœªæµ‹è¯•
 	
 
-## µÚÒ»²½½¨ÒéÔÚÏîÄ¿ÏÂ´´½¨Ò»¸ö½Ó¿Ú¼Ì³Ğ`lib.network.bean`°üÏÂµÄ`NetworkListener`½Ó¿Ú,Õâ¸ö½Ó¿ÚÃû³Æ¿ÉËæÒâÈ¡,¸½ÉÏ±¾ÈËµÄ´úÂë:
+## ç¬¬ä¸€æ­¥å»ºè®®åœ¨é¡¹ç›®ä¸‹åˆ›å»ºä¸€ä¸ªæ¥å£ç»§æ‰¿`lib.network.bean`åŒ…ä¸‹çš„`NetworkListener`æ¥å£,è¿™ä¸ªæ¥å£åç§°å¯éšæ„å–,é™„ä¸Šæœ¬äººçš„ä»£ç :
 
 ```java
 public interface INetwork extends NetworkListener {
@@ -24,7 +24,7 @@ public interface INetwork extends NetworkListener {
     void exeNetworkRequest(int tag, NetworkRequest request);
 
     /**
-     * ¿ÉÒÔ×ÔĞĞÉèÖÃÖØÊÔ´ÎÊı¼°³¬Ê±Ê±¼ä, ¶àÓÃÓÚÒ»Ğ©ĞèÒª²»¶ÏÖØÊÔµÄÈÎÎñ
+     * å¯ä»¥è‡ªè¡Œè®¾ç½®é‡è¯•æ¬¡æ•°åŠè¶…æ—¶æ—¶é—´, å¤šç”¨äºä¸€äº›éœ€è¦ä¸æ–­é‡è¯•çš„ä»»åŠ¡
      *
      * @param tag
      * @param request
@@ -33,7 +33,7 @@ public interface INetwork extends NetworkListener {
     void exeNetworkRequest(int tag, NetworkRequest request, NetworkListener listener);
 
     /**
-     * È¡ÏûËùÓĞÍøÂçÈÎÎñ
+     * å–æ¶ˆæ‰€æœ‰ç½‘ç»œä»»åŠ¡
      */
     void cancelAllNetworkRequest();
 
@@ -42,13 +42,13 @@ public interface INetwork extends NetworkListener {
 ```
 
 
-## µÚ¶ş²½ÔÚÄãÏîÄ¿×îµ×²ãµÄFragmentºÍActivityÖĞÊµÏÖ`INetwork`Õâ¸öÄã¶¨ÒåµÄ½Ó¿Ú,²¢ÍêÉÆÍøÂçÇëÇóµÄ´úÂë,
-    ¶¨ÒåÒ»¸ö`lib.network`°üÏÂµÄ`NetworkExecutor`µÄ³ÉÔ±±äÁ¿,
+## ç¬¬äºŒæ­¥åœ¨ä½ é¡¹ç›®æœ€åº•å±‚çš„Fragmentå’ŒActivityä¸­å®ç°`INetwork`è¿™ä¸ªä½ å®šä¹‰çš„æ¥å£,å¹¶å®Œå–„ç½‘ç»œè¯·æ±‚çš„ä»£ç ,
+    å®šä¹‰ä¸€ä¸ª`lib.network`åŒ…ä¸‹çš„`NetworkExecutor`çš„æˆå‘˜å˜é‡,
 ```java
 	private NetworkExecutor mNetworkExecutor;
 ```
 
-	È»ºó,
+	ç„¶å,
 ```java
  public void exeNetworkRequest(int what, NetworkRequest request) {
         exeNetworkRequest(what, request, this);
@@ -79,7 +79,7 @@ public interface INetwork extends NetworkListener {
     }
 	
 ```
-	²»ÒªÍü¼ÇÔÚ`onDestroy`·½·¨ÖĞÌí¼ÓÈ¡ÏûÈÎÎñ
+	ä¸è¦å¿˜è®°åœ¨`onDestroy`æ–¹æ³•ä¸­æ·»åŠ å–æ¶ˆä»»åŠ¡
 ```java
     @Override
     protected void onDestroy() {
@@ -93,52 +93,50 @@ public interface INetwork extends NetworkListener {
 	
 ```
 
-## µÚÈı²½¾Í¼òµ¥ÁË,µ±Äã´´½¨µÄActivity»òÕßÊÇFragment¼Ì³ĞÄãĞ´µÄ»ùÀàÊ±,
-	ÍøÂçÇëÇó¾Íµ÷ÓÃÕâ¸ö·½·¨¾Í¿ÉÒÔÁË,
+## ç¬¬ä¸‰æ­¥å°±ç®€å•äº†,å½“ä½ åˆ›å»ºçš„Activityæˆ–è€…æ˜¯Fragmentç»§æ‰¿ä½ å†™çš„åŸºç±»æ—¶,
+	ç½‘ç»œè¯·æ±‚å°±è°ƒç”¨è¿™ä¸ªæ–¹æ³•å°±å¯ä»¥äº†,
 ```java
 	exeNetworkRequest(int what, NetworkRequest request);
 ```
-	µÚÒ»¸ö²ÎÊıwhatÊÇÄãÄã¿ªÆôµÄÇëÇóµÄĞòÁĞ,ÇëÇó³É¹¦»òÕßÊ§°Ü»òÕßÊÇÈ¡ÏûÇëÇó¶¼ÓÃµ½¸ÃÖµ,
-	µÚ¶ş¸ö²ÎÊıÊÇÇëÇóµÄÈÎÎñÊµÀı,NetworkRequest¿ÉÒÔÍ¨¹ı`lib.network.bean.NetworkRequest`ÀàÀïÃæµÄ
+	ç¬¬ä¸€ä¸ªå‚æ•°whatæ˜¯ä½ ä½ å¼€å¯çš„è¯·æ±‚çš„åºåˆ—,è¯·æ±‚æˆåŠŸæˆ–è€…å¤±è´¥æˆ–è€…æ˜¯å–æ¶ˆè¯·æ±‚éƒ½ç”¨åˆ°è¯¥å€¼,
+	ç¬¬äºŒä¸ªå‚æ•°æ˜¯è¯·æ±‚çš„ä»»åŠ¡å®ä¾‹,NetworkRequestå¯ä»¥é€šè¿‡`lib.network.bean.NetworkRequest`ç±»é‡Œé¢çš„
 ```java
 		NetworkRequest task = newPost(String url);
 ```
-µÈ·½·¨µÃµ½,Ò²¿ÉÒÔÍ¨¹ı`lib.network.bean.NetworkRequest`ÀàÀïÃæµÄ
+ç­‰æ–¹æ³•å¾—åˆ°,ä¹Ÿå¯ä»¥é€šè¿‡`lib.network.bean.NetworkRequest`ç±»é‡Œé¢çš„
 ```java
 		task.addParam(String name, String value);
 ```
-µÈ·½·¨Ìí¼ÓÇëÇóµÄ²ÎÊı
+ç­‰æ–¹æ³•æ·»åŠ è¯·æ±‚çš„å‚æ•°
 
-## ÆäËü¼¸¸ö·½·¨µÄ½âÊÍ:
+## å…¶å®ƒå‡ ä¸ªæ–¹æ³•çš„è§£é‡Š:
 ```java
 	    Object onNetworkResponse(int id, NetworkResponse nr);
 ```
-¿ÉÒÔÍ¨¹ı`nr.getText()`µÃµ½ÇëÇóµ½µÄÍøÂçÊı¾İ(Sring×Ö·û´®ÀàĞÍ),Õâ¸ö·½·¨ÊÇÈÃÄã°ÑµÃµ½µÄStringÀàĞÍÊı¾İ½âÎö³ÉjsonÊı¾İ²¢·â×°µ½beanÀàµÄ
-
+å¯ä»¥é€šè¿‡`nr.getText()`å¾—åˆ°è¯·æ±‚åˆ°çš„ç½‘ç»œæ•°æ®(Sringå­—ç¬¦ä¸²ç±»å‹),è¿™ä¸ªæ–¹æ³•æ˜¯è®©ä½ æŠŠå¾—åˆ°çš„Stringç±»å‹æ•°æ®è§£ææˆjsonæ•°æ®å¹¶å°è£…åˆ°beanç±»çš„,è¿”å›çš„Objectå³ä½ å°è£…å¥½æ•°æ®çš„beanè¿™ä¸ªç±»
 ```java
 	     void onNetworkSuccess(int id, Object result);
 ```
-Õâ¸ö·½·¨ÊÇÈÃÄã¶Ô³É¹¦ÄÃµ½ÍøÂçÊı¾İ²¢½âÎö³É¹¦ºóµÄ²Ù×÷µÄ,`result`½âÎöºóµÄÊı¾İ
-
+è¿™ä¸ªæ–¹æ³•æ˜¯è®©ä½ å¯¹æˆåŠŸæ‹¿åˆ°ç½‘ç»œæ•°æ®å¹¶è§£ææˆåŠŸåçš„æ“ä½œçš„,`result`æ˜¯è§£æåçš„beanæ•°æ®,åªéœ€æŠŠresultå¼ºè½¬æˆ`onNetworkResponse`è¿™ä¸ªæ–¹æ³•è¿”å›çš„Objec(å³ä½ è¿”å›çš„è‡ªå·±å®šä¹‰çš„bean)å³å¯
 ```java
 	     void onNetworkError(int id, NetError error);
 ```
-Õâ¸ö·½·¨ÊÇÍøÂçÇëÇóÊı¾İ´íÎó»òÕßÆäËü´íÎóÊ±²Ù×÷µÄ·½·¨,ÀıÈçÈ¡ÏûLoadingµÈ,¿ÉÒÔ´Ó`error`ÖĞÄÃµ½´íÎóÄÚÈİ
+è¿™ä¸ªæ–¹æ³•æ˜¯ç½‘ç»œè¯·æ±‚æ•°æ®é”™è¯¯æˆ–è€…å…¶å®ƒé”™è¯¯æ—¶æ“ä½œçš„æ–¹æ³•,ä¾‹å¦‚å–æ¶ˆLoadingç­‰,å¯ä»¥ä»`error`ä¸­æ‹¿åˆ°é”™è¯¯å†…å®¹
 
 
 
-## »ìÏı
+## æ··æ·†
 
-```¸Ã¿âµÄ
+```è¯¥åº“çš„
  -keep class okhttp3.**
  -keep class okio.**
 
-#okhttpµÄ
+#okhttpçš„
 -dontwarn okhttp3.**
 -keep class okhttp3.**{*;}
 
 
-#okioµÄ
+#okioçš„
 -dontwarn okio.**
 -keep class okio.**{*;}
 
