@@ -7,7 +7,7 @@
 * Android Studio
 	
 	```
-	compile 'com.wangyue:okhttputils-packaging:1.0.1'
+	compile 'com.wangyue:okhttputils-packaging:1.0.2'
 	```
 	当前使用的是这个版本,其它版本未测试
 	
