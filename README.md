@@ -101,17 +101,17 @@ public interface INetwork extends NetworkListener {
 	第一个参数what是你你开启的请求的序列,请求成功或者失败或者是取消请求都用到该值,
 	第二个参数是请求的任务实例,NetworkRequest可以通过`lib.network.bean.NetworkRequest`类里面的
 ```java
-		NetworkRequest task = newPost(String url);
+	NetworkRequest task = newPost(String url);
 ```
 等方法得到,也可以通过`lib.network.bean.NetworkRequest`类里面的
 ```java
-		task.addParam(String name, String value);
+	task.addParam(String name, String value);
 ```
 等方法添加请求的参数
 
-## 最后一步,在你的项目中(尽量在Application中)调用方法:
+## 最后一步,在你的项目中(尽量在Application中)调用网络请求的初始化方法:
 ```java
-		NetworkRequest.init(this);
+	NetworkRequest.init(this);
 ```
 
 ## 其它几个方法的解释:
