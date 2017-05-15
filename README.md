@@ -109,6 +109,11 @@ public interface INetwork extends NetworkListener {
 ```
 等方法添加请求的参数
 
+## 最后一步,在你的项目中(尽量在Application中)调用方法:
+```java
+		NetworkRequest.init(this);
+```
+
 ## 其它几个方法的解释:
 ```java
 	    Object onNetworkResponse(int id, NetworkResponse nr);
